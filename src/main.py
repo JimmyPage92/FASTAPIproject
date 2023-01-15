@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from .config import Config
 from .database import init_db
 from src.api.rooms import rooms_router
+from src.api.customers import customer_router
+from src.api.bookings import bookings_router
 
 app: FastAPI = FastAPI()
 
@@ -18,3 +20,5 @@ def read_root() -> str:
 
 
 app.include_router(rooms_router)
+app.include_router(customer_router)
+app.include_router(bookings_router)

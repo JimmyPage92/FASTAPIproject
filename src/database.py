@@ -13,4 +13,4 @@ def init_db(db_path: str) -> None:
     DBSession.bind = engine
 
     # Create models & apply changes
-    # Base.metadata.create_all(engine)
+    Base.metadata.create_all(engine)
