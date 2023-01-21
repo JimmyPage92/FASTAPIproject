@@ -3,53 +3,32 @@ from fastapi import APIRouter
 from src.database import DBSession
 from .models import DBRoom
 from .schemas import RoomCreateData, RoomUpdateData
+from src.interfaces.db_interface import DataObject, DBInterface
+from .service import read_all_rooms, read_room, create_room, update_room, delete_room
 
 router: APIRouter = APIRouter()
 
 
 @router.get("/rooms")
-def api_read_all_rooms():
-    session: DBSession = DBSession()
-
-    all_rooms = session.query(DBRoom).all()
-    return all_rooms
+def api_read_all_rooms() -> list[DataObject]:
+    return read_all_rooms(DBInterface(DBSession(), DBRoom))
 
 
 @router.get("/room/{room_id}")
-def api_read_room(room_id: int):
-    session: DBSession = DBSession()
-
-    room = session.query(DBRoom).get(room_id)
-    return room
+def api_read_room(room_id: int) -> DataObject:
+    return read_room(room_id, DBInterface(DBSession(), DBRoom))
 
 
 @router.post("/room")
-def api_create_room(new_room: RoomCreateData):
-    session: DBSession = DBSession()
-
-    new_room_obj = DBRoom(**new_room.dict())
-    session.add(new_room_obj)
-    session.commit()
-    return "Created!"
+def api_create_room(new_room: RoomCreateData) -> DataObject:
+    return create_room(new_room, DBInterface(DBSession(), DBRoom))
 
 
 @router.put("/room/{room_id}")
-def api_update_room(room_id: int, data_to_update: RoomUpdateData):
-    session: DBSession = DBSession()
-
-    room_to_update = session.query(DBRoom).get(room_id)
-
-    for key, value in data_to_update.dict(exclude_none=True).items():
-        setattr(room_to_update, key, value)
-
-    session.commit()
-    return "Updated!"
+def api_update_room(room_id: int, data_to_update: RoomUpdateData) -> DataObject:
+    return update_room(room_id, data_to_update, DBInterface(DBSession(), DBRoom))
 
 
 @router.delete("/room")
-def api_delete_room(room_id: int):
-    session = DBSession()
-    room_to_delete = session.query(DBRoom).get(room_id)
-    session.delete(room_to_delete)
-    session.commit()
-    return "Deleted!"
+def api_delete_room(room_id: int) -> DataObject:
+    return delete_room(room_id, DBInterface(DBSession(), DBRoom))
