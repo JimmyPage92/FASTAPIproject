@@ -37,7 +37,7 @@ def api_create_booking(new_booking: BookingCreateData):
 def api_update_booking(booking_id: int, data_to_update: BookingUpdateData):
     session: DBSession = DBSession()
 
-    booking_to_update = session.query(BookingUpdateData).get(booking_id)
+    booking_to_update = session.query(DBBookings).get(booking_id)
 
     for key, value in data_to_update.dict(exclude_none=True).items():
         setattr(booking_to_update, key, value)

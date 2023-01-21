@@ -21,8 +21,3 @@ class BookingUpdateData(BaseModel):
 
 
 
-"""from_date: Optional[date]
-    to_date: Optional[date]
-    price: Optional[int]
-    customer_id: Optional[int]
-    room_id: Optional[int]"""

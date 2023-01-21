@@ -9,3 +9,8 @@ class DBCustomers(Base):
     first_name = Column(String(250), nullable=False)
     last_name = Column(String(250), nullable=False)
     email_address = Column(String(250), nullable=False)
+    # phone_number = Column(Integer, nullable=False)
+    # street = Column(String(100), nullable=False)
+    # city = Column(String(100), nullable=False)
+    # post_code = Column(Integer, nullable=False)
+
