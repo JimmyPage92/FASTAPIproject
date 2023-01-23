@@ -16,3 +16,4 @@ def init_db(db_path: str) -> None:
     # Create models & apply changes
     Base.metadata.create_all(engine)
 
+
