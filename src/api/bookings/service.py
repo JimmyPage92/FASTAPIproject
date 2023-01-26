@@ -2,21 +2,21 @@ from src.interfaces.db_interface import DataObject, DBInterface
 from .schemas import BookingCreateData, BookingUpdateData
 
 
-def read_all_customers(customer_interface: DBInterface) -> list[DataObject]:
-    return customer_interface.read_all()
+def read_all_bookings(booking_interface: DBInterface) -> list[DataObject]:
+    return booking_interface.read_all()
 
 
-def read_customer(customer_id: int, customer_interface: DBInterface) -> DataObject:
-    return customer_interface.read_by_id(customer_id)
+def read_booking(booking_id: int, booking_interface: DBInterface) -> DataObject:
+    return booking_interface.read_by_id(booking_id)
 
 
-def create_customer(new_customer: BookingCreateData, customer_interface: DBInterface) -> DataObject:
-    return customer_interface.create(new_customer.dict())
+def create_booking(new_booking: BookingCreateData, booking_interface: DBInterface) -> DataObject:
+    return booking_interface.create(new_booking.dict())
 
 
-def update_customer(customer_id: int, customer_to_update: BookingUpdateData, customer_interface: DBInterface) -> DataObject:
-    return customer_interface.update(customer_id, customer_to_update)
+def update_booking(booking_id: int, booking_to_update: BookingUpdateData, booking_interface: DBInterface) -> DataObject:
+    return booking_interface.update(booking_id, booking_to_update)
 
 
-def delete_customer(customer_id: int, customer_interface: DBInterface) -> DataObject:
-    return customer_interface.delete(customer_id)
+def delete_booking(booking_id: int, booking_interface: DBInterface) -> DataObject:
+    return booking_interface.delete(booking_id)
