@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, Boolean
 from src.database import Base
 
 
@@ -13,3 +13,4 @@ class DBCustomers(Base):
     street = Column(String(250), nullable=False)
     city = Column(String(250), nullable=False)
     post_code = Column(Integer, nullable=False)
+    want_email = Column(Boolean, nullable=False)

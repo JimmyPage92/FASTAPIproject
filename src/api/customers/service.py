@@ -20,3 +20,4 @@ def update_customer(customer_id: int, customer_to_update: CustomerUpdateData, cu
 
 def delete_customer(customer_id: int, customer_interface: DBInterface) -> DataObject:
     return customer_interface.delete(customer_id)
+

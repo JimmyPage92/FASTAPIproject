@@ -11,6 +11,7 @@ class CustomerCreateData(BaseModel):
     street: str
     city: str
     post_code: int
+    want_email: bool
 
 
 class CustomerUpdateData(BaseModel):
@@ -20,6 +21,7 @@ class CustomerUpdateData(BaseModel):
     phone_number: Optional[int]
     street: Optional[str]
     city: Optional[str]
-    post_code: Optional[str]
+    post_code: Optional[int]
+    want_email: Optional[bool]
 
 

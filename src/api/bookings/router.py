@@ -3,6 +3,7 @@ from fastapi import APIRouter
 from src.database import DBSession
 from .models import DBBookings
 from .schemas import BookingCreateData, BookingUpdateData
+from datetime import datetime
 
 router: APIRouter = APIRouter()
 
@@ -53,3 +54,14 @@ def api_delete_booking(booking_id: int):
     session.delete(booking_to_delete)
     session.commit()
     return "Deleted booking!"
+
+# wartość bool która sprawdzi czy rezerwacja pokoju jest dokonana czy nie
+# czy tu chodzi o to zeby wyciagnac na podstawie ID pokoju lub numeru pokoju czy ten pokoj ma z tabeli (booking) wartosc
+# from date ??
+
+# @router.get('/room/is_booking/{room_id}')
+# def api_is_book(room_id: int):
+#     pass
+
+# wtedy możesz dodać endpoint który sprawdzi czy wybrany pokój jest wolny
+# czy tu mozna porownac dzisiejsza date do daty z tabeli booking z kolumny to_date ??
