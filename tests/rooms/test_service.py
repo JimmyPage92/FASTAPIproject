@@ -2,7 +2,7 @@ import unittest
 
 from src.api.rooms.schemas import RoomCreateData
 from src.api.rooms.service import create_room
-from src.interfaces.db_interface import DataObject, DBInterface
+from src.interfaces.db_interface import DataObject
 
 
 class DataInterfaceStub:
@@ -14,6 +14,7 @@ class RoomInterface(DataInterfaceStub):
     def create(self, room_data: DataObject) -> DataObject:
         new_room = dict(room_data)
         new_room["id"] = 1
+        print(new_room)
         return new_room
 
 
@@ -29,4 +30,5 @@ class TestRoom(unittest.TestCase):
             room_interface=RoomInterface(),
         )
         self.assertEqual(room_data["price"], 100)
+
 
