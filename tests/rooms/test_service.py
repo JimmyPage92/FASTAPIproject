@@ -32,3 +32,4 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(room_data["price"], 100)
 
 
+""""""
