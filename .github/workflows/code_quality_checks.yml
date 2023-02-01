@@ -1,9 +1,7 @@
 name: Run Python code and docstyle linters
 
-on:
-  push:
-    branches:
-      - '**'
+on: push
+
 
 jobs:
   build:
