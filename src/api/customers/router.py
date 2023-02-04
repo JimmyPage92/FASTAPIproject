@@ -4,7 +4,8 @@ from src.database import DBSession
 from .models import DBCustomers
 from .schemas import CustomerCreateData, CustomerUpdateData
 from src.interfaces.db_interface import DataObject, DBInterface
-from .service import read_all_customers, read_customer, create_customer, update_customer, delete_customer
+from .service import read_all_customers, read_customer, \
+    create_customer, update_customer, delete_customer
 
 
 router: APIRouter = APIRouter()
@@ -33,4 +34,3 @@ def api_update_customer(customer_id: int, data_to_update: CustomerUpdateData) ->
 @router.delete("/delete_customer")
 def api_delete_customer(room_id: int) -> DataObject:
     return delete_customer(room_id, DBInterface(DBSession(), DBCustomers))
-

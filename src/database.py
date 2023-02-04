@@ -19,6 +19,7 @@ def init_db(db_path: str) -> None:
     # connection.execute(add_column_stmt)
     Base.metadata.create_all(engine)
 
-    # add_column_stmt = text('ALTER TABLE customer ADD COLUMN city varchar(255);')
+    # add_column_stmt = text('ALTER TABLE customer
+    # ADD COLUMN city varchar(255);')
     # connection = engine.connect()
     # connection.execute(add_column_stmt)

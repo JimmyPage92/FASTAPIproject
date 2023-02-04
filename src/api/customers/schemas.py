@@ -23,5 +23,3 @@ class CustomerUpdateData(BaseModel):
     city: Optional[str]
     post_code: Optional[int]
     want_email: Optional[bool]
-
-

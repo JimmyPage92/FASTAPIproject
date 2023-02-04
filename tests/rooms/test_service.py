@@ -44,8 +44,8 @@ import fastapi
     (1, {"id": 1, "price": 100, "number": 100, "size": 100})
 ])
 def test_api_read_room(room_id: int, expected_results: dict):
-    from src.main import rooms_router
     app = fastapi.FastAPI()
+    from src.main import rooms_router
     app.include_router(rooms_router)
     client = TestClient(app)
     response = client.get("/room/{room_id}")

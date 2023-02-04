@@ -4,15 +4,16 @@ from src.database import DBSession
 from .schemas import BookingCreateData, BookingUpdateData
 from src.interfaces.db_interface import DataObject, DBInterface
 from src.api.bookings.models import DBBookings
-from src.api.bookings.service import read_all_bookings, read_booking, create_booking, update_booking, delete_booking
+from src.api.bookings.service import read_all_bookings, read_booking, \
+    create_booking, update_booking, delete_booking
 
 router: APIRouter = APIRouter()
-
 
 
 @router.get("/bookings")
 def api_read_all_bookings() -> list[DataObject]:
     return read_all_bookings(DBInterface(DBSession(), DBBookings))
+
 
 @router.get("/booking/{booking_id}")
 def api_read_booking(booking_id: int) -> DataObject:

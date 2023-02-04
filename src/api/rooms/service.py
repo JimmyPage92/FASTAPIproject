@@ -1,5 +1,4 @@
 from datetime import date
-
 from sqlalchemy import and_
 
 from src.interfaces.db_interface import DataObject, DBInterface
@@ -38,5 +37,5 @@ def check_room_availability(session: DBSession, room_id: int, from_date: date, t
 
 def find_available_rooms(session: DBSession, from_date: date, to_date: date) -> list[DBRoom]:
     all_rooms: list[DBRoom] = session.query(DBRoom).all()
-    return [room for room in all_rooms if check_room_availability(session, room.id, from_date, to_date)]
-
+    return [room for room in all_rooms
+            if check_room_availability(session, room.id, from_date, to_date)]

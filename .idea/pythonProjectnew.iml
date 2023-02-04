@@ -3,6 +3,30 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/_pytest" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/attr" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/attrs" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/attrs-22.2.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/exceptiongroup" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/exceptiongroup-1.1.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/flake8" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/flake8-6.0.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/iniconfig" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/iniconfig-2.0.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/mccabe-0.7.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/packaging" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/packaging-23.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pluggy" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pluggy-1.0.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pycodestyle-2.10.0.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pyflakes" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pyflakes-3.0.1.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pytest" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/pytest-7.2.1.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/tomli" />
+      <excludeFolder url="file://$MODULE_DIR$/.venv/Lib/site-packages/tomli-2.0.1.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/rooms/.pytest_cache/v" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

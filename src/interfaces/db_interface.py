@@ -6,7 +6,8 @@ DataObject = dict[str, Any]
 
 
 def model_to_dict(base_model: Base) -> dict[str, Any]:
-    return {col.name: getattr(base_model, col.name) for col in base_model.__table__.columns}
+    return {col.name: getattr(base_model, col.name) for
+            col in base_model.__table__.columns}
 
 
 class DBInterface:
@@ -16,7 +17,8 @@ class DBInterface:
         self.db_model = db_model
 
     def read_all(self) -> list[DataObject]:
-        return [model_to_dict(result) for result in self.session.query(self.db_model).all()]
+        return [model_to_dict(result) for
+                result in self.session.query(self.db_model).all()]
 
     def read_by_id(self, id_: int) -> DataObject:
         return model_to_dict(self.session.query(self.db_model).get(id_))
