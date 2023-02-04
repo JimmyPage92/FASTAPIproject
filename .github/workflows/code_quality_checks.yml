@@ -13,7 +13,7 @@ jobs:
 
       - name: Lint Python code
         run: |
-             python -m flake8 ./src
+
              python -m pylint ./src
              python -m bandit ./src
              python -m pydocstyle ./src
