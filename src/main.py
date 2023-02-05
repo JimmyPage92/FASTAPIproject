@@ -22,3 +22,4 @@ def read_root() -> str:
 app.include_router(rooms_router)
 app.include_router(customer_router)
 app.include_router(bookings_router)
+
