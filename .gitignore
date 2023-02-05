@@ -1,3 +1,9 @@
-.venv
+# Python cache
 __pycache__/
 *.py[cod]
+
+# Pycharm build
+.idea
+
+# Virtual env
+.venv

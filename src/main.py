@@ -11,7 +11,7 @@ app: FastAPI = FastAPI()
 
 @app.on_event("startup")
 def startup_event() -> None:
-    init_db(Config.db_file_loc)
+    init_db(Config.SQLALCHEMY_DATABASE_URI)
 
 
 @app.get("/")
